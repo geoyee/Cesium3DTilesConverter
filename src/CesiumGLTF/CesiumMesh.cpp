@@ -12,6 +12,7 @@
 #include <QDataStream>
 #include <QtDebug>
 
+#include <iostream>
 #include <sstream>
 #include <algorithm>
 
@@ -377,34 +378,34 @@ namespace scially {
 	void CesiumMesh::nanToZero()
 	{
 		for (auto& v : vertex) {
-			if (isnan(v.x()) || isinf(v.x())) {
+			if (std::isnan(v.x()) || std::isinf(v.x())) {
 				v.x() = 0;
 			}
-			if (isnan(v.y()) || isinf(v.x())) {
+			if (std::isnan(v.y()) || std::isinf(v.x())) {
 				v.y() = 0;
 			}
-			if (isnan(v.z()) || isinf(v.x())) {
+			if (std::isnan(v.z()) || std::isinf(v.x())) {
 				v.z() = 0;
 			}
 		}
 
 		for (auto& v : normals) {
-			if (isnan(v.x()) || isinf(v.x())) {
+			if (std::isnan(v.x()) || std::isinf(v.x())) {
 				v.x() = 0;
 			}
-			if (isnan(v.y()) || isinf(v.x())) {
+			if (std::isnan(v.y()) || std::isinf(v.x())) {
 				v.y() = 0;
 			}
-			if (isnan(v.z()) || isinf(v.x())) {
+			if (std::isnan(v.z()) || std::isinf(v.x())) {
 				v.z() = 0;
 			}
 		}
 
 		for (auto& v : texcoords) {
-			if (isnan(v.x()) || isinf(v.x())) {
+			if (std::isnan(v.x()) || std::isinf(v.x())) {
 				v.x() = 0;
 			}
-			if (isnan(v.y()) || isinf(v.x())) {
+			if (std::isnan(v.y()) || std::isinf(v.x())) {
 				v.y() = 0;
 			}
 		}

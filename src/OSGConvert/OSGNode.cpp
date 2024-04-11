@@ -5,6 +5,7 @@
 #include <OSGConvert/OSGParseVisitor.h>
 
 #include <osgDB/ReadFile>
+#include <QtDebug>
 
 namespace scially {
 	bool OSGIndexNode::parentIndex(uint32_t z, int32_t& x, int32_t& y) const {

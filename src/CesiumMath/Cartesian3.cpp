@@ -1,5 +1,6 @@
 #include <CesiumMath/Cartesian3.h>
 
+#include <iostream>
 #include <cmath>
 
 
@@ -270,7 +271,7 @@ namespace scially {
 	Cartesian3 Cartesian3::magnitudeToPoint(Cartesian3 scaledSpaceDirectionToPoint, double resultMagnitude) {
 		// The horizon culling point is undefined if there were no positions from which to compute it,
 		// the directionToPoint is pointing opposite all of the positions,  or if we computed NaN or infinity.
-		if (resultMagnitude <= 0.0 || ::isnan(resultMagnitude)) {
+		if (resultMagnitude <= 0.0 || std::isnan(resultMagnitude)) {
 			return Cartesian3();
 		}
 
