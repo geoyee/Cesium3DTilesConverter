@@ -19,7 +19,7 @@ foreach(TESTSRC ${TESTS})
 	
 	# copy test data
 	add_custom_command(TARGET  ${TESTNAME} POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
                 "${PROJECT_SOURCE_DIR}/data"
                 $<TARGET_FILE_DIR:${TESTNAME}>/data
     )
