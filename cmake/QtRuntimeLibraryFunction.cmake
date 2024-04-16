@@ -11,10 +11,10 @@ endmacro(link_qt_library)
 
 macro(copy_gdal_data target)
     add_custom_command(TARGET ${target} POST_BUILD
-                COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+                COMMAND ${CMAKE_COMMAND} -E copy_directory
                     "${PROJECT_SOURCE_DIR}/share/proj_data"
                     $<TARGET_FILE_DIR:${target}>/proj_data
-                COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+                COMMAND ${CMAKE_COMMAND} -E copy_directory
                     "${PROJECT_SOURCE_DIR}/share/gdal_data"
                     $<TARGET_FILE_DIR:${target}>/gdal_data
     )
